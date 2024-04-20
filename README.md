@@ -1,16 +1,12 @@
-# profile_list
+# profile_App
 
-A new Flutter project.
+A new Flutter project which a user can add profiles
 
-## Getting Started
+With a simple user-interface a user can add profile of his/her friends, family, etc. User can delete, edit and search a profile and also can add a profile to favourite list.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Key features
+ 1. Add profiles
+ 2. Edit profile
+ 3. Delete profile
+ 4. Search profile
+ 5. Favourite profile
