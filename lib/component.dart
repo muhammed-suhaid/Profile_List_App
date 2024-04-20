@@ -9,15 +9,17 @@ class CustomSizedTextform extends StatelessWidget {
   final TextInputType keyboardtype;
   final int? maxlenght;
   final FormFieldValidator<String>? validate;
-  const CustomSizedTextform(
-      {super.key,
-      required this.height,
-      required this.text,
-      required this.hinttext,
-      required this.keyboardtype,
-      required this.maxlenght,
-      required this.validate,
-      required this.controllerr});
+
+  const CustomSizedTextform({
+    super.key,
+    required this.height,
+    required this.text,
+    required this.hinttext,
+    required this.keyboardtype,
+    required this.maxlenght,
+    required this.validate,
+    required this.controllerr,
+  });
 
   @override
   @override

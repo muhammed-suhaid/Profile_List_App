@@ -5,10 +5,12 @@ import 'component.dart';
 import 'list.dart';
 
 class UpdateProfile extends StatefulWidget {
+  final Profiles updateprofile;
 
-  final updateprofile;
-
-  const UpdateProfile({super.key, required this.updateprofile});
+  const UpdateProfile({
+    super.key,
+    required this.updateprofile,
+  });
 
   @override
   State<UpdateProfile> createState() => _AddProfileState();
@@ -16,11 +18,10 @@ class UpdateProfile extends StatefulWidget {
 
 List<String> gender = ['Male', 'Female', 'Others'];
 
-//List<Profiles> profile = List.empty(growable: true);
 //
 class _AddProfileState extends State<UpdateProfile> {
   String? selectedValue;
-   String currentOption = '';
+  String currentOption = '';
   //
   TextEditingController nametext = TextEditingController();
   TextEditingController emailtext = TextEditingController();
@@ -45,10 +46,8 @@ class _AddProfileState extends State<UpdateProfile> {
 
   @override
   Widget build(BuildContext context) {
-    // final args = ModalRoute.of(context)!.settings.arguments as Map;
- 
     currentOption = widget.updateprofile.gender;
-    selectedValue = widget.updateprofile.state;    
+    selectedValue = widget.updateprofile.state;
     nametext.text = widget.updateprofile.name;
     emailtext.text = widget.updateprofile.email;
     phonetext.text = widget.updateprofile.phone;
@@ -56,10 +55,7 @@ class _AddProfileState extends State<UpdateProfile> {
     addresstext.text = widget.updateprofile.address;
     citytext.text = widget.updateprofile.city;
     pintext.text = widget.updateprofile.pin;
-    
-    //phonetext.text = args[phonetext].toString();
-    //print(profile[0].name);
-    //addresstext.text = args['address'];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black54,
@@ -225,7 +221,6 @@ class _AddProfileState extends State<UpdateProfile> {
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   items: dropdownItems,
-                 
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'State is required';
@@ -239,7 +234,6 @@ class _AddProfileState extends State<UpdateProfile> {
                   ),
                   style: const TextStyle(
                     fontSize: 16.0,
-                    color: Colors.black54,
                   ),
                   icon: const Icon(Icons.arrow_drop_down),
                 ),
@@ -274,7 +268,7 @@ class _AddProfileState extends State<UpdateProfile> {
                       city: citytext.text,
                       gender: currentOption,
                       pin: pintext.text,
-                      state: selectedValue,
+                      state: selectedValue.toString(),
                       id: widget.updateprofile.id,
                       isFav: widget.updateprofile.isFav,
                     );
@@ -287,15 +281,16 @@ class _AddProfileState extends State<UpdateProfile> {
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ProfileList()),
+                        builder: (context) => const ProfileList(),
+                      ),
                       (route) => false,
                     );
                   },
                   style: const ButtonStyle(
-                      minimumSize:
-                          MaterialStatePropertyAll(Size(double.infinity, 45)),
-                      backgroundColor:
-                          MaterialStatePropertyAll(Colors.black54)),
+                    minimumSize:
+                        MaterialStatePropertyAll(Size(double.infinity, 45)),
+                    backgroundColor: MaterialStatePropertyAll(Colors.black54),
+                  ),
                   child: const Text("UPDATE"),
                 ),
               )

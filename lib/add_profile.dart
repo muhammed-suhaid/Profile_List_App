@@ -20,7 +20,7 @@ class _AddProfileState extends State<AddProfile> {
   String? selectedValue;
   String currentOption = gender[2];
   //
-  
+
   TextEditingController nametext = TextEditingController();
   TextEditingController emailtext = TextEditingController();
   TextEditingController phonetext = TextEditingController();
@@ -136,9 +136,7 @@ class _AddProfileState extends State<AddProfile> {
                     padding: EdgeInsets.all(10.0),
                     child: Text(
                       "Select Your Gender",
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
+                      style: TextStyle(fontSize: 25),
                     ),
                   ),
                   RadioListTile(
@@ -160,14 +158,15 @@ class _AddProfileState extends State<AddProfile> {
                         });
                       }),
                   RadioListTile(
-                      value: gender[2],
-                      groupValue: currentOption,
-                      title: const Text("Others"),
-                      onChanged: (value) {
-                        setState(() {
-                          currentOption = value.toString();
-                        });
-                      })
+                    value: gender[2],
+                    groupValue: currentOption,
+                    title: const Text("Others"),
+                    onChanged: (value) {
+                      setState(() {
+                        currentOption = value.toString();
+                      });
+                    },
+                  )
                 ],
               ),
               Padding(
@@ -222,7 +221,6 @@ class _AddProfileState extends State<AddProfile> {
                   ),
                   style: const TextStyle(
                     fontSize: 16.0,
-                    color: Colors.black54,
                   ),
                   icon: const Icon(Icons.arrow_drop_down),
                 ),
@@ -257,22 +255,24 @@ class _AddProfileState extends State<AddProfile> {
                       city: citytext.text,
                       gender: currentOption,
                       pin: pintext.text,
-                      state: selectedValue,
-                      id:randomid(),
-                      isFav: false,                     
+                      state: selectedValue.toString(),
+                      id: randomid(),
+                      isFav: false,
                     );
                     profile.add(newProfile);
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => const ProfileList()),
+                      MaterialPageRoute(
+                          builder: (context) => const ProfileList()),
                       (route) => false,
                     );
                   },
                   style: const ButtonStyle(
-                      minimumSize:
-                          MaterialStatePropertyAll(Size(double.infinity, 45)),
-                      backgroundColor:
-                          MaterialStatePropertyAll(Colors.black54)),
+                    minimumSize: MaterialStatePropertyAll(
+                      Size(double.infinity, 45),
+                    ),
+                    backgroundColor: MaterialStatePropertyAll(Colors.black54),
+                  ),
                   child: const Text("SUBMIT"),
                 ),
               )

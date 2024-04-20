@@ -1,15 +1,15 @@
-class Profiles{
- final  String name;
+class Profiles {
+  final String name;
   final String email;
   final String phone;
   final String age;
- final  String gender;
- final  String address;
- final  String city;
+  final String gender;
+  final String address;
+  final String city;
   final String id;
-  final state;
- final  String pin;
-   bool isFav;
+  final String state;
+  final String pin;
+  bool isFav;
   Profiles({
     required this.name,
     required this.email,
@@ -22,8 +22,5 @@ class Profiles{
     required this.pin,
     required this.id,
     required this.isFav,
-
-    }); 
+  });
 }
-
-
