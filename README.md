@@ -19,3 +19,10 @@ The user interface will consist of the following screens:
 2. **Add Profile Screen** : Allows users to add a new profile.
 3. **Edit Profile Screen** : Allows users to edit existing profile details.
 4. **Favorites Screen** : Displays a list of profiles marked as favorites for easy access.
+
+Youtube Link : https://youtu.be/RLunrb4vTPs
+
+https://github.com/muhammed-suhaid/Profile_List_App/assets/106069427/31a694a5-8a3f-450a-a64a-3976364acd39
+
+
+
