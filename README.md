@@ -1,6 +1,6 @@
 # profile_App
 
-A new Flutter project which a user can add profiles
+A new On-going Flutter project which a user can add profiles
 
 With a simple user-interface a user can add profile of his/her friends, family, etc. User can delete, edit and search a profile and also can add a profile to favourite list.
 
